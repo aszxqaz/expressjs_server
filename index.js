@@ -1,6 +1,6 @@
 import { exec, spawn,  } from "child_process";
 
-for(let i = 0; i < 20; i++) {
+for(let i = 0; i < 30; i++) {
   const a = exec('node woopy.js', {
     // signal: ab.signal,
   })

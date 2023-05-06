@@ -79,7 +79,7 @@ for (a = startIndeces[0]; a < words.length; a++) {
                           step++;
                           if (step % 100 == 0)
                             console.log(
-                              `${step} wallets have checked on Ethernet... Average speed: ${(
+                              `${step} wallets have checked on Etherscan... Average speed: ${(
                                 (step / (Date.now() - startDate)) *
                                 1000 *
                                 60

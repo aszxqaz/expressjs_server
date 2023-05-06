@@ -256,6 +256,82 @@ export default class ApiKeys {
       id: "64568190f84710694eceffdc",
       value: "N41K6IZQK177MU9Z4PJW9TVHRM63XEK2WH",
     },
+    {
+      id: "64568f13f84710694eceffde",
+      value: "1D4KIVSI8SHEQG33SYTYHWIJG5Z7CI5QZ5",
+    },
+    {
+      id: "64568f69f84710694eceffdf",
+      value: "3U4IKIXJCFAQEXTZMH7SS9EZ4CICZKBV4W",
+    },
+    {
+      id: "64568fcdf84710694eceffe0",
+      value: "8I99N21IXJ5CWB5FMXNJ78G5S4VFJ7G4RQ",
+    },
+    {
+      id: "64569018f84710694eceffe1",
+      value: "DT4MRKS7BHZT43W899B2B3SW11JUUYTZZA",
+    },
+    {
+      id: "64569083f84710694eceffe2",
+      value: "N1B9ZANU6PG2GJTFXDKUXDX6JTWG1UE4GS",
+    },
+    {
+      id: "645690f6f84710694eceffe3",
+      value: "92GMZQNXSFXGYKAZ8DAZFQPCH8698IITI2",
+    },
+    {
+      id: "64569152f84710694eceffe4",
+      value: "EA431FG87UK2HAZ7U5FV2DEX55JPIPDJUC",
+    },
+    {
+      id: "645691a5f84710694eceffe5",
+      value: "5UU9ZWXPBH6CPX2HU82CCYTCUP4ZSW4RMU",
+    },
+    {
+      id: "645691fbf84710694eceffe6",
+      value: "IWD3NPZXQ997P78R6MQ5XCEVN25391GJVM",
+    },
+    {
+      id: "6456924cf84710694eceffe7",
+      value: "666WN8543G6H1THYWQ7S6IZZIJ7HA12IT5",
+    },
+    {
+      id: "6456929ef84710694eceffe8",
+      value: "817BNRNEJDTWKUVJI5QXA7FMTGB7PI77MC",
+    },
+    {
+      id: "6456931ff84710694eceffea",
+      value: "AVXXJC97SBCXUMP37W29JK4Y6VGK2EIMF2",
+    },
+    {
+      id: "6456937df84710694eceffeb",
+      value: "PASNK5RJWAJA324EPC281PCZP5IR7PRGVF",
+    },
+    {
+      id: "645693cbf84710694eceffec",
+      value: "KTZ4N27KHSYG2Y99RCYRD8P4FHR5WMNJA1",
+    },
+    {
+      id: "64569420f84710694eceffed",
+      value: "GIME2K1M1X7C42IYHKX2IK9MQGYRCTFU8S",
+    },
+    {
+      id: "64569497f84710694eceffef",
+      value: "NVZPW3R64C3MINKDYRNEDM6A51CWFR4HQ9",
+    },
+    {
+      id: "64569500f84710694ecefff0",
+      value: "2V5CEZSF52IHHDDVHX82UZIPWYHEXNIRK3",
+    },
+    {
+      id: "6456955ff84710694ecefff1",
+      value: "7CRTPTUH74YSUUNMKRT22ZC8XNSTG96GUE",
+    },
+    {
+      id: "645695bef84710694ecefff2",
+      value: "MK3KGC1TBP6NFFP9AP3F4F8JFSCV1D4KIV",
+    },
   ].map((a) => a.value);
   static cur = 0;
 

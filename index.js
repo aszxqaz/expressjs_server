@@ -1,7 +1,7 @@
-import cluster from 'node:cluster';
-import http from 'node:http';
-import { availableParallelism } from 'node:os';
-import process from 'node:process';
+import cluster from 'cluster';
+import http from 'http';
+import { availableParallelism } from 'os';
+import process from 'process';
 
 if (cluster.isPrimary) {
 

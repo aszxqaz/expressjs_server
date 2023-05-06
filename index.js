@@ -5,7 +5,7 @@ import process from "process";
 import axios from "axios";
 
 const TOTAL = 1000;
-const DIVIDER = 1;
+const DIVIDER = 8;
 
 if (cluster.isPrimary) {
   let count = 0;

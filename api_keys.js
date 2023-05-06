@@ -236,6 +236,26 @@ export default class ApiKeys {
       id: "6455e044448ea8c276e84a5b",
       value: "MD36MMWH2KVZZSEH84BSRCRATHBWIT7PKE",
     },
+    {
+      id: "6456800af84710694eceffd8",
+      value: "SQ8E5EF3NHCSCZBB1QFRJUP1RSGFPA9D37",
+    },
+    {
+      id: "64568080f84710694eceffd9",
+      value: "QVZ44WC17WGMXBS4176I2VSYD15RYITV7M",
+    },
+    {
+      id: "645680d8f84710694eceffda",
+      value: "5YNVGF8AHGVCU8J8GX9ZQB9RJFH17ITNW5",
+    },
+    {
+      id: "6456813af84710694eceffdb",
+      value: "H1T45N2IQE8ZRFV9UQDATKH6U9VKSYGPID",
+    },
+    {
+      id: "64568190f84710694eceffdc",
+      value: "N41K6IZQK177MU9Z4PJW9TVHRM63XEK2WH",
+    },
   ].map((a) => a.value);
   static cur = 0;
 

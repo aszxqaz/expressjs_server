@@ -1,6 +1,6 @@
 import cluster from 'cluster';
 import http from 'http';
-import { availableParallelism } from 'os';
+import {  cpus } from 'os';
 import process from 'process';
 
 if (cluster.isPrimary) {
@@ -19,7 +19,7 @@ if (cluster.isPrimary) {
   }
 
   // Start workers and listen for messages containing notifyRequest
-  const numCPUs = availableParallelism();
+  const numCPUs = cpus().length;
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork();
   }

@@ -24,7 +24,8 @@ let startIndeces = Array(12)
   .fill(0)
   .map((a) => Math.trunc(Math.random() * WORDS.length));
 
-let step = 0;
+let walletCheckedTimes = 0;
+let phraseBuiltTimes = 0;
 
 function sendParent(obj) {
   process.stdout.write(JSON.stringify(obj));
@@ -60,7 +61,7 @@ for (a = startIndeces[0]; a < WORDS.length; a++) {
                         // if (a == 0 && b == 0 && c == 0 && d == 0 && e == 0 && f == 0 && g == 0
                         //   && h == 0 && k == 0 && l == 0) continue;
                         const phrase = `${WORDS[a]} ${WORDS[b]} ${WORDS[c]} ${WORDS[d]} ${WORDS[e]} ${WORDS[f]} ${WORDS[g]} ${WORDS[h]} ${WORDS[k]} ${WORDS[l]} ${WORDS[m]} ${WORDS[n]}`;
-
+                        phraseBuiltTimes++;
                         try {
                           const provider = new EtherscanProvider(
                             undefined,
@@ -70,9 +71,10 @@ for (a = startIndeces[0]; a < WORDS.length; a++) {
                           const address = await wallet.getAddress();
                           const balance = await provider.getBalance(address);
 
-                          if (++step % COUNT_TO_INFORM_PARENT == 0) {
+                          if (++walletCheckedTimes % COUNT_TO_INFORM_PARENT == 0) {
                             sendParent({
                               count: COUNT_TO_INFORM_PARENT,
+                              phrases: phraseBuiltTimes,
                             });
                           }
 

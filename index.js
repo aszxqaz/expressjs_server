@@ -14,6 +14,7 @@ let lastDate = startDate;
 let lastCount = 0;
 let newMaximumCount = COUNT_TO_INFORM_PARENT;
 let countStep = COUNT_TO_INFORM_PARENT;
+let phraseBuiltTimes = 0;
 
 console.log("started");
 
@@ -31,10 +32,12 @@ for (let i = 0; i < CHILDS_COUNT; i++) {
 
     if (msg.count) {
       walletsCount += msg.count;
+      phraseBuiltTimes += msg.phrases;
     }
 
     if (walletsCount >= newMaximumCount) {
       console.log(`${walletsCount} wallets scanned on Etherscan...`);
+      console.log(`${phraseBuiltTimes} phrases built...`);
       console.log(`Instances up: ${CHILDS_COUNT}`);
       
       const avgSpeed = (walletsCount / (Date.now() - startDate)) * 1000 * 60;

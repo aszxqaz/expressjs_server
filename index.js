@@ -1,4 +1,7 @@
+import { Worker } from "worker_threads"
+import loop from "./loop.js"
 import express from 'express';
+
 const app = express();
 
 app.get('/', (req, res) => {
@@ -13,10 +16,10 @@ const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
+    main();
+
 })
 
-const { Worker } = require("worker_threads");
-const loop = require("./loop.js");
 
 function setUpWorker() {
   return new Promise((res, rej) => {
@@ -74,4 +77,3 @@ async function main() {
 
 // 37600
 
-main();

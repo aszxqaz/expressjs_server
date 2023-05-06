@@ -1,5 +1,5 @@
-const loop = require('./loop.js')
-const {parentPort} = require('worker_threads')
+import loop from "./loop.js";
+import { parentPort } from "worker_threads";
 
-const res = loop()
-parentPort.postMessage(res)
+const res = loop();
+parentPort.postMessage(res);

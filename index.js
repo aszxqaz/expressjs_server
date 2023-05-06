@@ -1,8 +1,10 @@
 import { Worker } from "worker_threads";
+import {createHash} from 'crypto'
 import loop from "./loop.js";
 import express from "express";
+import { hashSync } from "bcrypt";
 
-const NUMBER = 32;
+const NUMBER = 5;
 
 function setUpWorker() {
   return new Promise((res, rej) => {
@@ -22,20 +24,12 @@ let syncResult = 0;
 let asyncResult = 0;
 
 async function main() {
-  let start = Date.now();
-  const asyncResult = await Promise.all(
-    new Array(NUMBER).fill(0).map((_) => setUpWorker())
-  ).then((res) => res.reduce((a, b) => a + b));
-  let end = Date.now();
-  asyncPerf = end - start;
-  console.log(`parallel performance: ${(asyncPerf / 1000).toFixed(2)} sec`);
-
-  start = Date.now();
-  let syncResult = 0;
+  const start = Date.now();
+  let syncResult = '';
   for (let i = 0; i < NUMBER; i++) {
-    syncResult += loop();
+    syncResult += hashSync('sdfsdfsdfdsvsdf', 20);
   }
-  end = Date.now();
+  const end = Date.now();
   syncPerf = end - start;
   console.log(`sync performance: ${(syncPerf / 1000).toFixed(2)} sec`);
 

@@ -1,25 +1,6 @@
-import { Worker } from "worker_threads"
-import loop from "./loop.js"
-import express from 'express';
-
-const app = express();
-
-app.get('/', (req, res) => {
-    res.send('Choo Choo! Welcome to your Express app 🚅');
-})
-
-app.get("/json", (req, res) => {
-    res.json({"Choo Choo": "Welcome to your Express app 🚅"});
-})
-
-const port = process.env.PORT || 3000;
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-    main();
-
-})
-
+import { Worker } from "worker_threads";
+import loop from "./loop.js";
+import express from "express";
 
 function setUpWorker() {
   return new Promise((res, rej) => {
@@ -33,9 +14,14 @@ function setUpWorker() {
   });
 }
 
+let syncPerf = 0;
+let asyncPerf = 0;
+let syncResult = 0;
+let asyncResult = 0;
+
 async function main() {
   let start = Date.now();
-  const res = await Promise.all([
+  const asyncResult = await Promise.all([
     setUpWorker(),
     setUpWorker(),
     setUpWorker(),
@@ -62,18 +48,54 @@ async function main() {
     setUpWorker(),
   ]).then((res) => res.reduce((a, b) => a + b));
   let end = Date.now();
-  console.log("async: ", end - start);
-  console.log("res: ", res);
+  asyncPerf = end - start;
+  console.log("async: ", asyncPerf);
+  console.log("res: ", asyncResult);
 
   start = Date.now();
-  const res2 = loop() + loop() + loop() + loop() + loop() + loop() + 
-               loop() + loop() + loop() + loop() + loop() + loop() +
-               loop() + loop() + loop() + loop() + loop() + loop() +
-               loop() + loop() + loop() + loop() + loop() + loop()
+  const syncResult =
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop() +
+    loop();
   end = Date.now();
-  console.log("sync: ", end - start);
-  console.log("res: ", res2);
+  syncPerf = end - start;
+  console.log("sync: ", syncPerf);
+  console.log("res: ", syncResult);
+
+  const app = express();
+  
+  app.get("/", (req, res) => {
+    res.send(
+      `asyncPerf: ${asyncPerf}; asyncRes: ${asyncResult}; syncPerf: ${syncPerf}; syncResult: ${syncResult}`
+    );
+  });
+  
+  const port = process.env.PORT || 3000;
+  
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+  });
 }
 
-// 37600
-
+main()

@@ -332,6 +332,50 @@ export default class ApiKeys {
       id: "645695bef84710694ecefff2",
       value: "MK3KGC1TBP6NFFP9AP3F4F8JFSCV1D4KIV",
     },
+    {
+      id: "64569954f84710694ecefff4",
+      value: "RKS7BHZT43W899B2B3SW11JUUYTZZACDAM",
+    },
+    {
+      id: "645699bcf84710694ecefff5",
+      value: "8TDMKE1PS3IAFKDIH768KAW9Z4PW3T5783",
+    },
+    {
+      id: "64569a0af84710694ecefff6",
+      value: "VJANNCAQN6BS7E9ZSJKHI1N9MFNWTE3DFD",
+    },
+    {
+      id: "64569a69f84710694ecefff7",
+      value: "VDD8M366IXHNZQ17ZA8D33SBRB4ZBDGKMM",
+    },
+    {
+      id: "64569ad0f84710694ecefff8",
+      value: "ZWXPBH6CPX2HU82CCYTCUP4ZSW4RMUCM7Y",
+    },
+    {
+      id: "64569b27f84710694ecefff9",
+      value: "32XIX6AWA5SZB5E3X8SHBGVNB2S962MEW7",
+    },
+    {
+      id: "64569b84f84710694ecefffa",
+      value: "WGHT3SDBI4ZZ2M7I1N66B31MT3FMQVIJXA",
+    },
+    {
+      id: "64569bd5f84710694ecefffb",
+      value: "9WDFH9GYQUCRJVHIEGGTG8GXM29MRPN14T",
+    },
+    {
+      id: "64569c31f84710694ecefffc",
+      value: "EIK6P6BE44WAXEDITWDBNKG9AJ2HT8XDS6",
+    },
+    {
+      id: "64569c9ff84710694ecefffd",
+      value: "BRHFC2MNE45J8RWWHJK41EVAG3PN7NU3BB",
+    },
+    {
+      id: "64569cf8f84710694ecefffe",
+      value: "9AQCWHCATZF3KMVZ7YX2BJRRAHJQDEKWKW",
+    },
   ].map((a) => a.value);
   static cur = 0;
 

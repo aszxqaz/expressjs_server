@@ -4,8 +4,11 @@ import { cpus } from "os";
 import process from "process";
 import axios from "axios";
 
+const TOTAL = 1000
+
 if (cluster.isPrimary) {
   let count = 0;
+  const numCPUs = cpus().length;
 
   function messageHandler(msg) {
     if (msg) {
@@ -14,11 +17,11 @@ if (cluster.isPrimary) {
       //   notifyClusters(count);
       // }
       if (msg.includes("ended")) count++;
-      if (count == 4) {
+      if (count == numCPUs) {
         console.log(`Took ${((Date.now() - startedAt) / 1000).toFixed(2)}`);
         const startedAt2 = Date.now();
         Promise.all(
-          new Array(1000).fill(0).map((_) =>
+          new Array(TOTAL).fill(0).map((_) =>
             fetch("https://jsonplaceholder.typicode.com/todos/1")
               .then((response) => response.json())
               .then(() => {
@@ -32,9 +35,8 @@ if (cluster.isPrimary) {
     }
   }
 
-  const numCPUs = cpus().length;
   for (let i = 0; i < numCPUs; i++) {
-    cluster.fork({ number: i });
+    cluster.fork({ number: i, numCPUs });
   }
 
   for (const id in cluster.workers) {
@@ -51,7 +53,7 @@ if (cluster.isPrimary) {
   //   .listen(process.env.PORT || 3001);
   // console.log(`Fork ${process.env.number} started`);
   Promise.all(
-    new Array(250).fill(0).map((_) =>
+    new Array(Math.ceil(TOTAL / process.env.numCPUs)).fill(0).map((_) =>
       fetch("https://jsonplaceholder.typicode.com/todos/1")
         .then((response) => response.json())
         .then(() => {

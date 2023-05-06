@@ -28,18 +28,16 @@ async function main() {
   ).then((res) => res.reduce((a, b) => a + b));
   let end = Date.now();
   asyncPerf = end - start;
-  console.log("async: ", asyncPerf);
-  console.log("res: ", asyncResult);
+  console.log(`parallel performance: ${(asyncPerf / 100).toFixed(2)} ms`);
 
   start = Date.now();
-  let syncResult =  0
-  for(let i = 0; i < NUMBER; i++) {
-    syncResult += loop()
+  let syncResult = 0;
+  for (let i = 0; i < NUMBER; i++) {
+    syncResult += loop();
   }
   end = Date.now();
   syncPerf = end - start;
-  console.log("sync: ", syncPerf);
-  console.log("res: ", syncResult);
+  console.log(`sync performance: ${(syncPerf / 100).toFixed(2)} ms`);
 
   const app = express();
 

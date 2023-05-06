@@ -62,11 +62,11 @@ for (a = startIndeces[0]; a < WORDS.length; a++) {
                         const phrase = `${WORDS[a]} ${WORDS[b]} ${WORDS[c]} ${WORDS[d]} ${WORDS[e]} ${WORDS[f]} ${WORDS[g]} ${WORDS[h]} ${WORDS[k]} ${WORDS[l]} ${WORDS[m]} ${WORDS[n]}`;
 
                         try {
-                          const wallet = Wallet.fromPhrase(phrase);
                           const provider = new EtherscanProvider(
                             undefined,
                             ApiKeys.getRandom()
                           );
+                          const wallet = Wallet.fromPhrase(phrase, provider);
                           const address = await wallet.getAddress();
                           const balance = await provider.getBalance(address);
 

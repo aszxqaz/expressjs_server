@@ -1,51 +1,41 @@
-import { Worker } from "worker_threads";
-import {createHash} from 'crypto'
-import loop from "./loop.js";
-import express from "express";
-import { hashSync } from "bcrypt";
+import cluster from 'node:cluster';
+import http from 'node:http';
+import { availableParallelism } from 'node:os';
+import process from 'node:process';
 
-const NUMBER = 5;
+if (cluster.isPrimary) {
 
-function setUpWorker() {
-  return new Promise((res, rej) => {
-    const worker = new Worker("./worker.js");
-    worker.on("message", (msg) => {
-      res(msg);
-    });
-    worker.on("error", (err) => {
-      rej(err);
-    });
-  });
-}
+  // Keep track of http requests
+  let numReqs = 0;
+  setInterval(() => {
+    console.log(`numReqs = ${numReqs}`);
+  }, 1000);
 
-let syncPerf = 0;
-let asyncPerf = 0;
-let syncResult = 0;
-let asyncResult = 0;
-
-async function main() {
-  const start = Date.now();
-  let syncResult = '';
-  for (let i = 0; i < NUMBER; i++) {
-    syncResult += hashSync('sdfsdfsdfdsvsdf', 20);
+  // Count requests
+  function messageHandler(msg) {
+    if (msg.cmd && msg.cmd === 'notifyRequest') {
+      numReqs += 1;
+    }
   }
-  const end = Date.now();
-  syncPerf = end - start;
-  console.log(`sync performance: ${(syncPerf / 1000).toFixed(2)} sec`);
 
-  const app = express();
+  // Start workers and listen for messages containing notifyRequest
+  const numCPUs = availableParallelism();
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
 
-  app.get("/", (req, res) => {
-    res.send(
-      `asyncPerf: ${asyncPerf}; asyncRes: ${asyncResult}; syncPerf: ${syncPerf}; syncResult: ${syncResult}`
-    );
-  });
+  for (const id in cluster.workers) {
+    cluster.workers[id].on('message', messageHandler);
+  }
 
-  const port = process.env.PORT || 3000;
+} else {
 
-  app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-  });
+  // Worker processes have a http server.
+  http.Server((req, res) => {
+    res.writeHead(200);
+    res.end('hello world\n');
+
+    // Notify primary about the request
+    process.send({ cmd: 'notifyRequest' });
+  }).listen(process.env.PORT || 3001);
 }
-
-main();

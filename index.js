@@ -28,7 +28,7 @@ async function main() {
   ).then((res) => res.reduce((a, b) => a + b));
   let end = Date.now();
   asyncPerf = end - start;
-  console.log(`parallel performance: ${(asyncPerf / 100).toFixed(2)} ms`);
+  console.log(`parallel performance: ${(asyncPerf / 1000).toFixed(2)} sec`);
 
   start = Date.now();
   let syncResult = 0;
@@ -37,7 +37,7 @@ async function main() {
   }
   end = Date.now();
   syncPerf = end - start;
-  console.log(`sync performance: ${(syncPerf / 100).toFixed(2)} ms`);
+  console.log(`sync performance: ${(syncPerf / 1000).toFixed(2)} sec`);
 
   const app = express();
 

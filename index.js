@@ -1,20 +1,23 @@
-import cluster from 'cluster';
-import http from 'http';
-import {  cpus } from 'os';
-import process from 'process';
+import cluster from "cluster";
+import http from "http";
+import { cpus } from "os";
+import process from "process";
 
 if (cluster.isPrimary) {
-
   // Keep track of http requests
   let numReqs = 0;
+  let count = 0;
   setInterval(() => {
-    console.log(`numReqs = ${numReqs}`);
+    console.log(`count = ${count}`);
   }, 1000);
 
   // Count requests
   function messageHandler(msg) {
-    if (msg.cmd && msg.cmd === 'notifyRequest') {
-      numReqs += 1;
+    if (msg.cmd) {
+      if (msg.cmd === "inc") {
+        count += 1;
+        notifyClusters(count)
+      }
     }
   }
 
@@ -25,17 +28,27 @@ if (cluster.isPrimary) {
   }
 
   for (const id in cluster.workers) {
-    cluster.workers[id].on('message', messageHandler);
+    cluster.workers[id].on("message", messageHandler);
   }
-
 } else {
+  process.send({ cmd: "inc" });
+  let count = 0;
+
+  process.on('message', msg => {
+    count = msg
+  })
 
   // Worker processes have a http server.
-  http.Server((req, res) => {
-    res.writeHead(200);
-    res.end('hello world\n');
+  http
+    .Server((req, res) => {
+      res.writeHead(200);
+      res.end(`hello world\n. Num: ${count}`);
+    })
+    .listen(process.env.PORT || 3001);
+}
 
-    // Notify primary about the request
-    process.send({ cmd: 'notifyRequest' });
-  }).listen(process.env.PORT || 3001);
+function notifyClusters(message) {
+  for (const id in cluster.workers) {
+    cluster.workers[id].send(message);
+  }
 }

@@ -392,6 +392,70 @@ export default class ApiKeys {
       id: "6456a2cef84710694ecf0004",
       value: "E6EGJVU73ZNCKMMJKFKZ2EAWUVHIHRGSYC",
     },
+    {
+      id: "64571441f84710694ecf0005",
+      value: "Z6JGXS3M1PGIUK74SC3WBSX8W2I5A1FE7S",
+    },
+    {
+      id: "645714b6f84710694ecf0006",
+      value: "JJSY16UAN2PCB3B5HN1T92BNW4QFXZT9D9",
+    },
+    {
+      id: "64571519f84710694ecf0007",
+      value: "1835DJ6HKF7MRP6ZX8PF1CN6JRVPY5749D",
+    },
+    {
+      id: "64571588f84710694ecf0008",
+      value: "ABT3HI81656AFQTBMEIIWUFWE55M1NQ1EQ",
+    },
+    {
+      id: "645715e7f84710694ecf0009",
+      value: "HDEAMAQU5GU44VH4P17VCK71BH7J7PZ6VP",
+    },
+    {
+      id: "64571651f84710694ecf000a",
+      value: "WG7GWG8C3CVDZGQTYU2ST18JVUMBSWFCM7",
+    },
+    {
+      id: "645716d4f84710694ecf000b",
+      value: "BC7N2ZQ92S85HBR8K4KF1KHX9GJ47FSB6K",
+    },
+    {
+      id: "6457173af84710694ecf000c",
+      value: "GVIP8TYJB74QNXID4SUZXEK471SC2TR3WS",
+    },
+    {
+      id: "6457179df84710694ecf000d",
+      value: "HPPG8X9FUNWXMD26D4Q8U5GMB32TGFJREK",
+    },
+    {
+      id: "645717f5f84710694ecf000e",
+      value: "P6EKR4H4BSW2UDCG2KSTFP2YKVYGAZ5YW6",
+    },
+    {
+      id: "64571858f84710694ecf000f",
+      value: "NAQE1G2NT191UDB7D2GCE2A1GS7459ICUA",
+    },
+    {
+      id: "645718bbf84710694ecf0010",
+      value: "NW37N899MJ8X91X7JXY2WRE96244S7VKYG",
+    },
+    {
+      id: "64571918f84710694ecf0011",
+      value: "VKUZVCTZ7QTKDHZQ6FQY7XFT1K45GEPNZS",
+    },
+    {
+      id: "64571976f84710694ecf0012",
+      value: "YZXGC8IWDSKMW91JKER1JCPWXE85KZ57HG",
+    },
+    {
+      id: "645719cdf84710694ecf0013",
+      value: "6QB555X9I5EUXJJIDZ1X5WVTAIFD996K3Z",
+    },
+    {
+      id: "64571a1df84710694ecf0014",
+      value: "W4ZAFYVPZKIPFDD8XV5VDPHRCUVMAQACU3",
+    },
   ].map((a) => a.value);
   static cur = 0;
 

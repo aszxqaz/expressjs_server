@@ -36,8 +36,8 @@ for (let i = 0; i < CHILDS_COUNT; i++) {
     }
 
     if (walletsCount >= newMaximumCount) {
-      console.log(`${walletsCount} wallets scanned on Etherscan...`);
-      console.log(`${phraseBuiltTimes} phrases built...`);
+      console.log(`${walletsCount.toLocaleString()} wallets scanned on Etherscan...`);
+      console.log(`${phraseBuiltTimes.toLocaleString()} phrases built...`);
       console.log(`Instances up: ${CHILDS_COUNT}`);
       
       const avgSpeed = (walletsCount / (Date.now() - startDate)) * 1000 * 60;
@@ -48,7 +48,7 @@ for (let i = 0; i < CHILDS_COUNT; i++) {
       lastDate = Date.now();
       
       // console.log(`Current speed: ${curSpeed.toFixed(2)} wallets / min.`);
-      console.log(`Average speed: ${avgSpeed.toFixed(2)} wallets / min.`);
+      console.log(`Average speed: ${Math.trunc(avgSpeed)} wallets / min.`);
       console.log(`Wallets found: ${JSON.stringify(walletsFound)}`);
       console.log('...');
 

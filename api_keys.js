@@ -692,6 +692,114 @@ export default class ApiKeys {
       id: "645742fbf84710694ecf0060",
       value: "MZUJBM59VJ5JJS1Z16S3YR962YI4CYTWQT",
     },
+    {
+      id: "64576562f84710694ecf0062",
+      value: "BBUYBXW42SE2JA8HYCQU83N344MJ4EREAZ",
+    },
+    {
+      id: "645765b7f84710694ecf0063",
+      value: "SEKWEB2EVF3QDV8NQ4W78T27GZXC7697CX",
+    },
+    {
+      id: "64576611f84710694ecf0064",
+      value: "FFDPHEV5G5DUMUZYGA5ZEIIZH9DV3FUAE1",
+    },
+    {
+      id: "6457665bf84710694ecf0065",
+      value: "6XBT7EKC9A6QTQCNET1KBAMQFZUYUSX5FV",
+    },
+    {
+      id: "645766b0f84710694ecf0066",
+      value: "FI8R2PZYUDIRAPEV4M5K9QS3DMHCKIXH2I",
+    },
+    {
+      id: "645766fbf84710694ecf0067",
+      value: "3P5X3WMDPNVSNSFM84QMFKMPQEF46GT4MI",
+    },
+    {
+      id: "64576745f84710694ecf0068",
+      value: "A1T8WHZJW3UU68QCQN1Z354Q38VAG1H36V",
+    },
+    {
+      id: "645767a2f84710694ecf0069",
+      value: "DNQDS1YBAAX5ED4PYYHHGAQAJFAVDV48YQ",
+    },
+    {
+      id: "645767f8f84710694ecf006a",
+      value: "9PMAZEUR6X5UH8X355XKW54HERBFGH4RV2",
+    },
+    {
+      id: "6457684bf84710694ecf006b",
+      value: "MC94C72R3W9YGV7V5IRJ9EU932BZM7CFHR",
+    },
+    {
+      id: "64576899f84710694ecf006c",
+      value: "6A2WK1XIX2EXVWUVTWHZ2WFTZEF4NNSIEM",
+    },
+    {
+      id: "645768f4f84710694ecf006d",
+      value: "FN6AI9HX4WG1IZMU2M7YFPYSGW1J461N3E",
+    },
+    {
+      id: "6457693bf84710694ecf006e",
+      value: "ADTZUK8UTDS4XD8D4QITZ4459FR8C1ZA13",
+    },
+    {
+      id: "64576993f84710694ecf006f",
+      value: "BRBD6I56VRQJU7M683X89XFF2TMWBADXSN",
+    },
+    {
+      id: "645769d9f84710694ecf0070",
+      value: "17D2XFR76PQB617FAEWYJIFGYA457Z95B9",
+    },
+    {
+      id: "64576a24f84710694ecf0071",
+      value: "ED27RPWRU5BPB6P65ABC32RFCFFF1KUHMB",
+    },
+    {
+      id: "64576a77f84710694ecf0072",
+      value: "YEYWCVZZB39IC7NCE1GSXPPGI22G9H2S2E",
+    },
+    {
+      id: "64576ac6f84710694ecf0073",
+      value: "VKR6345UMNBAJDK5AJPF5P3BHER36MVBS9",
+    },
+    {
+      id: "64576b31f84710694ecf0074",
+      value: "4GKGZY3PQQBVM1TVUSYG8KGJ5D7X4XRXHZ",
+    },
+    {
+      id: "64576b7ff84710694ecf0075",
+      value: "EPZPMQ3EXKZPEEZGX9R97RITHR34PS8U1Q",
+    },
+    {
+      id: "64576bcaf84710694ecf0076",
+      value: "95YJBQ2XASCISHKA3VD99IBAXR1XIDCXGN",
+    },
+    {
+      id: "64576c0ff84710694ecf0077",
+      value: "WP5Z34NWE49P8IZ28AZIJ198QS8X4W7NJR",
+    },
+    {
+      id: "64576c5af84710694ecf0078",
+      value: "XNSCM43KZJ66CNBT7WJW7357R2265PKKIU",
+    },
+    {
+      id: "64576cb0f84710694ecf0079",
+      value: "ANPFZZXZK4KDXP2VRU18HUQF2GS11ZTR3P",
+    },
+    {
+      id: "64576d01f84710694ecf007a",
+      value: "HWGMPVUSTVFEUFQKRCTX6YIVIAM98EMJ31",
+    },
+    {
+      id: "64576d4af84710694ecf007b",
+      value: "UD9HNXB8UI5T5I74GV52V2H5ISS59NAJGT",
+    },
+    {
+      id: "64576d94f84710694ecf007c",
+      value: "2I9WES134UEAX2UU56DCGHFRY2V532ZFSF",
+    },
   ].map((a) => a.value);
   static cur = 0;
 

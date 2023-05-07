@@ -520,6 +520,78 @@ export default class ApiKeys {
       id: "64572176f84710694ecf0026",
       value: "WSZ6J65TARTPMN4DII95FB65QSE6Z3Y2RG",
     },
+    {
+      id: "64572e2ff84710694ecf0028",
+      value: "K7XSSXPUIUDGDDFJUIB42A49JQ2EIX32XN",
+    },
+    {
+      id: "64572e9af84710694ecf0029",
+      value: "GNRPTAQ1MEF1WC9NZ9ZXW2UPBP3FBU9UFK",
+    },
+    {
+      id: "64572f0af84710694ecf002a",
+      value: "VVCBXHC1E9H6SRU327DQYRH7MAVZ2NXZPY",
+    },
+    {
+      id: "64572f89f84710694ecf002c",
+      value: "1X4S6RU4IRBEM199USXF4T7FYG6HREXGEW",
+    },
+    {
+      id: "6457301cf84710694ecf002e",
+      value: "WUK19M8X39S4DG26XK2HNF2UR83N1HKFSB",
+    },
+    {
+      id: "64573062f84710694ecf002f",
+      value: "2FXWKDBDYVN67PA2X967ZDUSYUVVFRTU1G",
+    },
+    {
+      id: "64573115f84710694ecf0031",
+      value: "AGVR7VHUUKRD3UYS4D6E8KU6GRGGVTYNUG",
+    },
+    {
+      id: "64573167f84710694ecf0032",
+      value: "4MQ49BU77ME6R2U9SXU996XN37K7FPUZH1",
+    },
+    {
+      id: "645731c7f84710694ecf0033",
+      value: "T1RGG2CX9HWTHNPK9M33Y8A2UZDQK92B78",
+    },
+    {
+      id: "64573215f84710694ecf0034",
+      value: "VHGA7MT3C2E7C4NIRV9UKIA2EE1GVVZ4XH",
+    },
+    {
+      id: "6457326af84710694ecf0035",
+      value: "GG1CYWJA9Q5IGW73MTA2QUBNK727JXUR8M",
+    },
+    {
+      id: "645732b2f84710694ecf0036",
+      value: "S62I6MD51XZTNGHY1HIEUDAMXMUJP46BRR",
+    },
+    {
+      id: "64573341f84710694ecf0038",
+      value: "6ZAJ7VXRCMPVCG3ZNKV22U1NHYMDJ9VE7A",
+    },
+    {
+      id: "64573397f84710694ecf0039",
+      value: "AFPK1SH8NZB5NQ6CB3MZY6X7RTD9P1SGGW",
+    },
+    {
+      id: "645733e7f84710694ecf003a",
+      value: "PIP9QCDP8W92PX2ND6EANDXRU5C75AN1AE",
+    },
+    {
+      id: "64573447f84710694ecf003b",
+      value: "2QB7BJ8I7MENHSJ47MXTM6KX96GWICPFZ5",
+    },
+    {
+      id: "6457349af84710694ecf003c",
+      value: "PZSSJAXWSWQQR8GXA7WCDF5TRDFXB55ADV",
+    },
+    {
+      id: "64573523f84710694ecf003e",
+      value: "QXQ4FN3U7ES225869CVD8SC47ART7YNRGZ",
+    },
   ].map((a) => a.value);
   static cur = 0;
 
